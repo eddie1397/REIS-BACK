@@ -19,6 +19,7 @@ travels.get('/', (req,res)=> {
 
 // Create a Travel Destination
 travels.post('/', (req,res)=> {
+  console.log(req.body);
   Travel.create(req.body,(error, createdTravel) => {
     if(error){
       res.status(400).json(error)

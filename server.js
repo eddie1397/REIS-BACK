@@ -4,6 +4,23 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 const MONGODB_URI = process.env.MONGODB_URI
 const mongoose = require('mongoose');
+const cors = require('cors');
+
+
+const whitelist = ['http://localhost:3000', 'Your Heroku Applicaiton']
+
+const corsOptions = {
+  origin: (origin,callback)=>{
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null,true)
+    } else {
+      callback(new Error('Not allowed by CORS!'))
+    }
+  },
+  credentials:true
+}
+
+app.use(cors(corsOptions))
 
 
 //SetUp for mongoose
