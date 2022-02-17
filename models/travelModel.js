@@ -6,7 +6,7 @@ const travelSchema = new Schema({
   city: {type:String, require: true},
   completed: {type:Boolean, default:false},
   description: {type:String, default:'This was the best trip ever!'},
-  tasks: [{type:Boolean,type: String, default:false}],
+  tasks: [{type: String, default:''}],
   notes:[{type: String, default:'This is a NOTE!'}]
 })
 
