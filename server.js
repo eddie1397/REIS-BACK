@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 
-const whitelist = ['http://localhost:3000', 'Your Heroku Applicaiton']
+const whitelist = ['http://localhost:3000', 'https://reis-frontend.herokuapp.com']
 
 const corsOptions = {
   origin: (origin,callback)=>{
